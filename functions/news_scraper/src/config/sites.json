@@ -1,0 +1,9 @@
+{
+  "globalNews": {
+    "url": "https://globalnews.ca/",
+    "selector": ".c-posts__headlineText"
+    
+  
+  }
+
+}
