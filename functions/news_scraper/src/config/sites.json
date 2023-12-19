@@ -1,9 +1,106 @@
+
+
 {
   "globalNews": {
     "url": "https://globalnews.ca/",
-    "selector": ".c-posts__headlineText"
-    
-  
+    "selectors": [
+      {
+        "parentSelector": "li.c-posts__item > div.c-posts__inner > div.c-posts__details",
+        "maxLinksToFollow": 3,
+        "maxElementsToScrape": 3,
+        "childSelectors": {
+          "headline": "a",
+          "link": "span"
+        },
+        "linkHandling": {
+          "follow": true,
+          "completeLink": true,
+          "linkPrefix": "https://globalnews.ca",
+          "parentSelector": "l-article__text",
+          "childSelector": {
+            "content": "p"
+          }
+
+        }
+      }
+    ]
+
+  },
+
+  "cbc": {
+    "url": "https://www.cbc.ca/news/",
+    "selectors": [
+      {
+        "parentSelector": ".primaryHeadline",
+        "maxLinksToFollow": 3,
+        "maxElementsToScrape": 3,
+        "childSelectors": {
+          "headline": ".headline",
+          "link": ".primaryHeadlineLink"
+        },
+        "linkHandling": {
+          "follow": true,
+          "completeLink": true,
+          "linkPrefix": "https://www.cbc.ca/news",
+          "parentSelector": ".story",
+          "childSelector": {
+            "content": "p"
+          }
+        
+        }
+      }
+
+    ]
+  },
+
+  "theGlobeAndMailCanada": {
+    "url": "https://www.theglobeandmail.com/canada/",
+    "selectors": [
+      {
+        "parentSelector": ".story-card",
+        "maxLinksToFollow": 3,
+        "maxElementsToScrape": 3,
+        "childSelectors": {
+          "headline": ".c-card__hed-text",
+          "link": "a"
+        },
+        "linkHandling": {
+          "follow": true,
+          "completeLink": true,
+          "linkPrefix": "https://www.theglobeandmail.com",
+          "parentSelector": "article.l-article",
+          "childSelector": {
+            "content": "p"
+          }
+        
+        }
+      }
+    ]
+  },
+
+  "theGlobeAndMailWorld": {
+    "url": "https://www.theglobeandmail.com/world/",
+    "selectors": [
+      {
+        "parentSelector": ".story-card",
+        "maxLinksToFollow": 3,
+        "maxElementsToScrape": 3,
+        "childSelectors": {
+          "headline": ".c-card__hed-text",
+          "link": "a"
+        },
+        "linkHandling": {
+          "follow": true,
+          "completeLink": true,
+          "linkPrefix": "https://www.theglobeandmail.com",
+          "parentSelector": "article.l-article",
+          "childSelector": {
+            "content": "p"
+          }
+        
+        }
+      }
+    ]
   }
 
 }
