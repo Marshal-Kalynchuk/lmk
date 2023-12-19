@@ -2,7 +2,7 @@ const { loadConfiguration } = require('./config/index');
 const scrapeHandler = require('./handlers/scrapeHandler');
 const storageHandler = require('./handlers/storageHandler');
 
-const siteKeys = ['globalNews']; // List of site keys to scrape
+const siteKeys = ['cbc', 'theGlobeAndMailCanada', 'theGlobeAndMailWorld']; // List of site keys to scrape
 async function main() {
   const promises = siteKeys.map(async (siteKey) => {
       const config = loadConfiguration(siteKey);
