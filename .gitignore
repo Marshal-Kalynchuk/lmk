@@ -1,11 +1,16 @@
+# 
 **/node_modules/
 
+
+# .env files
+**/.env*
 # Local .terraform directories
 **/.terraform/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.tfvars.json
 
 **/artifacts/
 

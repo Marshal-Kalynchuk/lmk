@@ -1,11 +1,18 @@
-require('dotenv').config();
-import OpenAI from "openai";
+import dotenv from 'dotenv';
+dotenv.config();
+import OpenAI from 'openai';
 
-const OPENAI_ORG_KEY = process.env.ORG_NAME;
 
+
+// Set the API key
+
+// change this to your API key
 const openai = new OpenAI({
-    organization: OPENAI_ORG_KEY,
+    apiKey: process.env.OPENAI_API_KEY
 });
+
+
+
 
 /**
  * Sends a request to the GPT API to generate content based on the provided prompt.
@@ -19,7 +26,6 @@ async function generateContent(prompt) {
             model: "gpt-4",
         });
         
-        console.log(completion.choices[0]);
         return completion.choices[0];
     } catch (error) {
         console.error('Error in GPT API request:', error);
@@ -27,6 +33,5 @@ async function generateContent(prompt) {
     }
 }
 
-module.exports = {
-    generateContent
-};
+export { generateContent };
+
