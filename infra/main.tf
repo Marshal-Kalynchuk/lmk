@@ -1,6 +1,6 @@
 provider "google" {
-  project     = "<firefly-408304>"
-  // region      = "<us-central>"
+  project     = "firefly-408304"
+  region      = "us-central1"
 }
 
 variable "openai_org_key" {
@@ -10,8 +10,8 @@ variable "openai_org_key" {
 
 
 resource "google_storage_bucket" "function_source_bucket" {
-  name     = "firefly-functions-bucket"
-  location = "us"
+  name     = "functions_source_bucket_73124023"
+  location = "US"
 }
 
 
@@ -46,7 +46,7 @@ resource "google_cloudfunctions_function" "content_generator" {
   runtime               = "nodejs14"
   available_memory_mb   = 256
   source_archive_bucket = google_storage_bucket.function_source_bucket.name
-  source_archive_object = google_storage_bucket_object.news_scraper_source.name
+  source_archive_object = google_storage_bucket_object.content_generator_source.name
   entry_point           = "index"
   trigger_http          = true
 
